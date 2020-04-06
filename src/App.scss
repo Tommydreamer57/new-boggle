@@ -1,0 +1,116 @@
+$background-color: #181b22;
+$block-shadow: #cccccc;
+$block-color: #ffffff;
+$font-family: Monospace;
+$font-size: 4rem;
+$block-size: $font-size * 1.5;
+$block-space: 3px;
+
+#root {
+    background: $background-color;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family;
+    color: $background-color;
+
+    .App {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+    }
+
+    .Timer,
+    .start-end,
+    .Inputs {
+        width: 100%;
+    }
+
+    .Timer,
+    input,
+    label,
+    button {
+        font-size: $font-size * 0.5;
+    }
+
+    .Timer,
+    input,
+    label {
+        color: $block-shadow;
+    }
+
+    .Timer,
+    input {
+        background: none;
+        text-align: center;
+    }
+
+    .start-end {
+        background: $block-color;
+
+        &.end {
+            background: none;
+            color: $block-shadow;
+            border: $block-space solid $block-shadow;
+        }
+    }
+
+    .Inputs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            + label {
+                margin-top: $font-size / 2;
+            }
+
+            input {
+                width: $font-size;
+                padding: 0;
+                margin: 0;
+                border: $block-space solid $block-shadow;
+
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .Board {
+        display: flex;
+        flex-direction: column;
+        margin: $font-size 0;
+
+        .row {
+            display: flex;
+
+            .letter-wrapper {
+                background: $block-shadow;
+                margin: $block-space;
+
+                .letter {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100%;
+                    background: $block-color;
+                    font-size: $font-size;
+                    width: $block-size;
+                    height: $block-size;
+                }
+            }
+        }
+    }
+}
