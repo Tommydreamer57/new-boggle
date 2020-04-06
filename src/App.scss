@@ -49,6 +49,13 @@ $block-space: 3px;
         text-align: center;
     }
 
+    .Timer {
+        &.finished {
+            animation: blink 0.3.5s;
+            animation-iteration-count: 3;
+        }
+    }
+
     .start-end {
         background: $block-color;
 
@@ -92,6 +99,17 @@ $block-space: 3px;
         display: flex;
         flex-direction: column;
         margin: $font-size 0;
+        position: relative;
+
+        &.finished {
+            .row {
+                .letter-wrapper {
+                    .letter {
+                        color: red;
+                    }
+                }
+            }
+        }
 
         .row {
             display: flex;
@@ -112,5 +130,17 @@ $block-space: 3px;
                 }
             }
         }
+    }
+}
+
+@keyframes blink {
+    from {
+        color: $block-shadow;
+    }
+    50% {
+        color: red;
+    }
+    to {
+        color: $block-shadow;
     }
 }

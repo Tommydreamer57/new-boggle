@@ -5,7 +5,7 @@ export default function Timer({
     seconds,
 }) {
     return (
-        <div className="Timer">
+        <div className={`Timer ${!seconds && !minutes ? 'finished' : ''}`}>
             <span>
                 {minutes}
             </span>

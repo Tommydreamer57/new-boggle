@@ -76,6 +76,7 @@ export default function App() {
             <Board
                 boggle={boggle}
                 hideLetters={!playing}
+                finished={duration <= 0}
             />
             <button
                 className={`start-end ${playing ? 'end' : 'start'}`}

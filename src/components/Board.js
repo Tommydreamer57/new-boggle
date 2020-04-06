@@ -5,9 +5,10 @@ export default function Board({
         board = [],
     } = {},
     hideLetters = false,
+    finished,
 }) {
     return (
-        <div className="Board">
+        <div className={`Board ${finished ? 'finished' : ''}`}>
             {board.map((row, i) => (
                 <div
                     key={i}
